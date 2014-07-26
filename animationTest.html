@@ -3,26 +3,98 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Animation Test</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
     <style>
         body, html {
             padding: 0;
             width: 100%;
             margin: 0;
             height: 100%;
-            background: black;
+            background: dimgray;
         }
         #playground {
-            background: white;
-            width: 600px;
-            height: 600px;
-            margin: 50px auto;
-
+            background: whitesmoke;
+            width: 495px;
+            height: 495px;
+            margin: 20px auto;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 0 30px 2px lightblue;
+            overflow: hidden;
+        }
+        #hero {
+            position: absolute;
+            background: skyblue;
+            border-radius: 15px;
+            top:0;
+            left:0;
+            width: 39px;
+            height: 39px;
+            margin: 3px;
+            box-shadow: 0 0 5px 3px lightgray;
+            visibility: hidden;
+        }
+        .blink {
+            box-shadow: 0 0 10px 3px lightgray;
+        }
+        #cover {
+            position: absolute;
+            z-index: 5;
+            top:0;
+            left: 0;
+            width: 495px;
+            height: 495px;
+            border-radius: 15px;
+            background: rgba(0,0,0,0.2);
+        }
+        #cover > #start {
+            font-family: sans-serif, Verdana, Tahoma;
+            display: table-cell;
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            left:37%;
+            top: 44%;
+            background: yellowgreen;
+            border-radius: 30px;
+            text-align: center;
+            color: whitesmoke;
+            font-size: 2.1em;
+            cursor: pointer;
+            line-height: 50px;
+            vertical-align: middle;
+            box-shadow: 0 0 10px 2px gray;
+            -webkit-transition: box-shadow 0.5s; /* For Safari 3.1 to 6.0 */
+            transition: box-shadow 0.5s;
+        }
+        #cover > #start:hover {
+            box-shadow: 0 0 50px 2px gray;
+            color: lightcyan;
+        }
+        #cover > #start:active {
+            background: darkgray;
         }
     </style>
+    <script>
+        $(document).ready(function() {
+            $('#start').on("click", function() {
+                $('#cover').hide();
+                $("#hero").hide().slideDown('500').css('visibility','visible');
+                for (var i = 0; i < 5; i++) {
+                    $('hero').fadeOut(250).fadeIn(250);
+                }
+
+            });
+        });
+
+    </script>
 </head>
 <body>
 <div id="playground">
-
+    <div id="hero"> </div>
+    <div id="cover">
+        <div id="start" onclick="start();"> START </div>
+    </div>
 </div>
 </body>
 </html>
