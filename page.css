@@ -1,9 +1,30 @@
+html{
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 20px;
+}
 #game{
 	 position:absolute;
      width:500px;
      height:500px;
-     background:red;
+     background:black;
 }
+ul{
+	list-style-type: none;
+	overflow: hidden;
+	border:2px solid;
+	border-radius:25px;
+}
+.justtextnav{
+	font: 35px arial,sans-serif;
+	float:left;
+	padding-left: 150px;
+	color: black;
+	padding-top: 35px;
+	padding-bottom: 30px;
+	border-right: 3px solid black
+}
+
 body{
 	
 }
