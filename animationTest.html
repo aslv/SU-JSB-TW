@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Animation Test</title>
     <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/playground.js" defer></script>
     <style>
         body, html {
             padding: 0;
@@ -33,6 +34,13 @@
             margin: 3px;
             box-shadow: 0 0 5px 3px lightgray;
             visibility: hidden;
+        }
+        .block {
+        	position: absolute;
+        	width: 45px;
+        	height: 45px;
+        	background-image: url('img/block.png');
+        	border-radius: 4px;
         }
         .blink {
             box-shadow: 0 0 10px 3px lightgray;
@@ -91,7 +99,32 @@
 </head>
 <body>
 <div id="playground">
-    <div id="hero"> </div>
+    <div id="hero"></div>
+    <div class="block" id="00"></div>
+    <div class="block" id="01"></div>
+    <div class="block" id="02"></div>
+    <div class="block" id="03"></div>
+    <div class="block" id="04"></div>
+    <div class="block" id="10"></div>
+    <div class="block" id="11"></div>
+    <div class="block" id="12"></div>
+    <div class="block" id="13"></div>
+    <div class="block" id="14"></div>
+    <div class="block" id="20"></div>
+    <div class="block" id="21"></div>
+    <div class="block" id="22"></div>
+    <div class="block" id="23"></div>
+    <div class="block" id="24"></div>
+    <div class="block" id="30"></div>
+    <div class="block" id="31"></div>
+    <div class="block" id="32"></div>
+    <div class="block" id="33"></div>
+    <div class="block" id="34"></div>
+    <div class="block" id="40"></div>
+    <div class="block" id="41"></div>
+    <div class="block" id="42"></div>
+    <div class="block" id="43"></div>
+    <div class="block" id="44"></div>
     <div id="cover">
         <div id="start" onclick="start();"> START </div>
     </div>
