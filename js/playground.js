@@ -1,5 +1,5 @@
 (function() {
-	var blocks = document.getElementsByClassName('block');
+	//var blocks = document.getElementsByClassName('block');
 	var block;
 	for ( var i = 0; i < 5; i++) {
 		for(var j = 0; j < 5; j++) {
