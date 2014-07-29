@@ -25,16 +25,20 @@
             overflow: hidden;
         }
         #hero {
+            box-sizing: border-box;
             position: absolute;
             background: skyblue;
             border-radius: 15px;
             top:0;
             left:0;
-            width: 39px;
-            height: 39px;
+            width: 45px;
+            height: 45px;
             margin: 0px; /* changed from 3px; */
+            padding: 3px;
             box-shadow: 0 0 5px 3px lightgray;
             z-index: 2;
+            -webkit-transition: all .1s linear;
+            transition: all .1s linear;
             /* visibility: hidden; */
         }
         .block {
@@ -100,7 +104,7 @@
 </head>
 <body>
 <div id="playground">
-    <div id="hero"></div>
+    <div id="hero"><img src="img/nakov0_39.png" alt="hero"></div>
     <div class="block" id="00"></div>
     <div class="block" id="01"></div>
     <div class="block" id="02"></div>
@@ -138,7 +142,7 @@
 	    document.getElementById('cover').style.display = 'none';
 	    var blocks = document.getElementsByClassName('block');
 
-	    var HERO_SPEED = 5;
+	    var HERO_SPEED = 15;
     </script>
 </body>
 </html>
