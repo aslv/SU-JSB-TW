@@ -29,21 +29,19 @@ function locateBomb(x, y) {
     setTimeout(function() {
         clearInterval(bombVisualEffect);
         // trigger flames:
-        bomb.style.boxShadow = '0 0 120px 30px gold';
+        bomb.style.boxShadow = '0 0 100px 80px gold';
+        // remove the bomb and kill heroes after the effects are done:
         setTimeout(function() {
+            // remove.bomb:
+            bomb.style.display = 'none';
             bomb.remove();
         }, 800)
-        // kill heros if they are near
-        killHeroes(bomb.style.left, bomb.style.top);
+        killHeroes(x, y);
     }, 4000);
 }
 
 function killHeroes(x, y) {
-    // remove 'px' and parse to int
-    x = x.substring(0, x.indexOf('p'));
-    x = parseInt(x);
-    y = y.substring(0, y.indexOf('p'));
-    y = parseInt(y);
+
     var isHeroKilled = false;
     var hero = document.getElementById("hero");
     // get hero location:
@@ -67,8 +65,25 @@ function killHeroes(x, y) {
         // check vertically
         if (
             !(
-                ((y - 90 > hY) && (y - 90) > (hY + 40))
-                || ((y + 135) < hY && (y + 135) < (hY + 40))
+                ((y >= hY) && y >= (hY + 40))
+                || (y + 45 <= hY && (y + 45) <= (hY + 40))
+                )
+            )   {
+                 isHeroKilled = true;
+                }
+            }
+    // check vertical:
+    if (
+        !(
+            ((y - 90 > hY) && (y - 90) > (hY + 40))
+            || ((y + 135) < hY && (y + 135) < (hY + 40))
+            )
+        ) {
+        // check vertically
+        if (
+            !(
+                ((x > hX) && x > (hX + 40))
+                || (x + 45 < hX && (x + 45) < (hX + 40))
                 )
             ) {
             isHeroKilled = true;
