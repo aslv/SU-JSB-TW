@@ -37,15 +37,32 @@
             z-index: 2;
             /* visibility: hidden; */
         }
+        #playground > .bomb {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            margin: 4px;
+            color: gainsboro;
+            line-height: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            vertical-align: middle;
+            text-align: center;
+            background: black;
+            border-radius: 20px;
+            border: 5px solid black;
+            box-shadow: 0 0 4px 1px black ;
+            -webkit-transition:  0.6s; /* For Safari 3.1 to 6.0 */
+            transition:  0.6s;
+            z-index: 0;
+        }
         .block {
         	position: absolute;
         	width: 45px;
         	height: 45px;
         	background-image: url('img/block.png');
         	border-radius: 4px;
-        }
-        .blink {
-            box-shadow: 0 0 10px 3px lightgray;
+            z-index: 1;
         }
         #cover {
             position: absolute;
@@ -84,6 +101,7 @@
         #cover > #start:active {
             background: darkgray;
         }
+
     </style>
     <script defer>
         $(document).ready(function() {
