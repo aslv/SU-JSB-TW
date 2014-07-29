@@ -6,6 +6,7 @@
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="js/playground.js" defer></script>
     <script src="js/hero.js" defer></script>
+    <script src="js/bomb.js" defer></script>
     <style>
         body, html {
             padding: 0;
@@ -25,16 +26,20 @@
             overflow: hidden;
         }
         #hero {
+            box-sizing: border-box;
             position: absolute;
             background: skyblue;
             border-radius: 15px;
             top:0;
             left:0;
-            width: 39px;
-            height: 39px;
-            margin: 0px; /* changed from 3px; */
+            width: 45px;
+            height: 45px;
+            margin: 0px;
+            padding: 3px;
             box-shadow: 0 0 5px 3px lightgray;
             z-index: 2;
+            -webkit-transition: all .1s linear;
+            transition: all .1s linear;
             /* visibility: hidden; */
         }
         #playground > .bomb {
@@ -91,7 +96,7 @@
             line-height: 50px;
             vertical-align: middle;
             box-shadow: 0 0 10px 2px gray;
-            -webkit-transition: box-shadow 0.5s; /* For Safari 3.1 to 6.0 */
+            -webkit-transition: box-shadow 0.5s;
             transition: box-shadow 0.5s;
         }
         #cover > #start:hover {
@@ -101,7 +106,6 @@
         #cover > #start:active {
             background: darkgray;
         }
-
     </style>
     <script defer>
         $(document).ready(function() {
@@ -118,7 +122,8 @@
 </head>
 <body>
 <div id="playground">
-    <div id="hero"></div>
+    <div id="hero"><img src="img/nakov0_39.png" alt="hero" /></div>
+    <div class="bomb" id="test-bomb"></div><!-- experimentally -->
     <div class="block" id="00"></div>
     <div class="block" id="01"></div>
     <div class="block" id="02"></div>
@@ -156,7 +161,12 @@
 	    document.getElementById('cover').style.display = 'none';
 	    var blocks = document.getElementsByClassName('block');
 
-	    var HERO_SPEED = 5;
+        // experimentally
+        var testBomb = document.getElementById('test-bomb');
+        testBomb.style.top = '180px';//'90px';
+        testBomb.style.left = '90px';//'135px';
+
+	    var HERO_SPEED = 15;
     </script>
 </body>
 </html>
