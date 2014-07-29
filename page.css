@@ -2,41 +2,74 @@ html{
 	margin-left: 50px;
 	margin-right: 50px;
 	margin-top: 20px;
-	background: url(planet3.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-#game{
-	 position:absolute;
-     width:500px;
-     height:500px;
-     background:black;
-	 
-}
-ul{
-	list-style-type: none;
-	overflow: hidden;
-	border:2px solid;
-	border-radius:25px;
-	color: #FFCC33;
-}
-.justtextnav{
-	font: 35px arial,sans-serif;
-	float:left;
-	padding-left: 150px;
-	color: #FFCC33;
-	padding-top: 35px;
-	padding-bottom: 30px;
-	border-right: 3px solid #FFCC33;
 	background: url(planet31.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 }
+a:link    {
+	color:blue;
+	text-decoration: none;
+	color: pink;
+}
+a:visited {
+	color:black;
+	color: pink;
+}
+a:hover   {
+	color:red;
+	color: pink;
+}
+a:active  {
+	color:yellow;
+	color: pink;
+}
 
+#game{
+	 position:absolute;
+     width:500px;
+     height:500px;
+     background:black;
+	 color: pink;
+	 
+}
+div.transparent{
+  height: 450px;
+  margin: 30px 50px;
+  background-color: black;
+  border: 3px solid pink;
+  opacity:0.6;
+  filter:alpha(opacity=60); 
+}
+ul{
+	list-style-type: none;
+	overflow: hidden;
+
+}
+p{
+	font: 50px arial,sans-serif;
+	color: pink;
+	
+}
+.justtextnav{
+	font: 20px arial,sans-serif;
+	float:left;
+	color: pink;
+	padding-bottom: 10px;
+	border-right: 1px solid black;
+	background-size: cover;
+	text-shadow: -5px 10px white;
+	padding-left: 20px;'
+	
+
+}
+.logo{	
+	float:left;
+	padding-bottom: 10px;
+	padding-left: 20px;'
+	
+}
 body{
 	
 }
