@@ -77,5 +77,24 @@ function isMoveable(tb, rl) {
 		}
 	}
 
-	return horizontal || vertical;
+	function isOverBomb() {
+		var bombs = document.getElementsByClassName('bomb');
+		var bomb;
+		var bLeft; var bRight; var bTop; var bBottom;
+		for (var i = 0; i < bombs.length; i++) {
+			bomb = bombs[i];
+			bLeft = parseInt(bomb.style.left);
+			bRight = bLeft + bomb.clientWidth;
+			bTop = parseInt(bomb.style.top);
+			bBottom = bTop + bomb.clientHeight;
+
+			if (bottom > bTop && top < bBottom) {
+				if ((left < bLeft && bLeft < right) || (left < bRight && bRight < right) || (left == bLeft && right == bRight)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	return (horizontal || vertical) && !isOverBomb();
 }

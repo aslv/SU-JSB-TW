@@ -88,6 +88,18 @@
         #cover > #start:active {
             background: darkgray;
         }
+
+        /* for experimantal purpoise only */
+        .bomb {
+            display: block;
+            position: absolute;
+            border-radius: 20px;
+            width: 45px;
+            height: 45px;
+            border: 1px solid #F00;
+            background-color: #000;
+        }
+        
     </style>
     <script defer>
         $(document).ready(function() {
@@ -104,7 +116,8 @@
 </head>
 <body>
 <div id="playground">
-    <div id="hero"><img src="img/nakov0_39.png" alt="hero"></div>
+    <div id="hero"><img src="img/nakov0_39.png" alt="hero" /></div>
+    <div class="bomb" id="test-bomb"></div><!-- experimentally -->
     <div class="block" id="00"></div>
     <div class="block" id="01"></div>
     <div class="block" id="02"></div>
@@ -141,6 +154,11 @@
 	    var playGround = document.getElementById('playground');
 	    document.getElementById('cover').style.display = 'none';
 	    var blocks = document.getElementsByClassName('block');
+
+        // experimentally
+        var testBomb = document.getElementById('test-bomb');
+        testBomb.style.top = '180px';//'90px';
+        testBomb.style.left = '90px';//'135px';
 
 	    var HERO_SPEED = 15;
     </script>
