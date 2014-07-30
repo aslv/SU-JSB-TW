@@ -120,12 +120,17 @@ function evilStartMoving() {
 			for (var i = 0; i < bombs.length; i++) {
 				bomb = bombs[i];
 				bLeft = parseInt(bomb.style.left);
-				bRight = bLeft + bomb.clientWidth;
+				bRight = bLeft + bomb.clientWidth + 15;
 				bTop = parseInt(bomb.style.top);
-				bBottom = bTop + bomb.clientHeight;
+				bBottom = bTop + bomb.clientHeight + 15;
 
 				if (bottom > bTop && top < bBottom) {
-					if ((left < bLeft && bLeft < right) || (left < bRight && bRight < right) || (left == bLeft && right == bRight)) {
+					if ((left < bLeft && bLeft < right) || (left < bRight && bRight < right)) {
+						return true;
+					}
+				}
+				if (right > bLeft && left < bRight) {
+					if ((top < bTop && bTop < bottom) || (top < bBottom && bBottom < bottom)) {
 						return true;
 					}
 				}

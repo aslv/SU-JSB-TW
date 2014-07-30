@@ -8,7 +8,7 @@ function locateBomb(x, y) {
     var bomb = document.createElement("div");
     // style the bomb to append to the #playground :
     bomb.className = 'bomb';
-    bomb.innerHTML = 'B!';
+    bomb.innerHTML = '<img src="img/bomb_30.png" alt="B!" />';
 
     // locate bomb in position x,y :
     bomb.style.left = x + "px";
