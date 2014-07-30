@@ -43,7 +43,7 @@ a:active  {
 	 
 }
 div.transparent{
-  height: 450px;
+  height: 500px;
   margin: 30px 50px;
   background-color: black;
   border: 3px solid pink;
@@ -55,8 +55,36 @@ ul{
 	overflow: hidden;
 
 }
+h1{
+	font: 30px arial,sans-serif;
+	color: pink;
+	
+}
+.created{
+	font: 30px arial,sans-serif;
+	color: #00FF00;
+	
+
+}
+
+.others{
+	font: 30px arial,sans-serif;
+	color: red;
+}
+
+.ok{
+	font: 30px arial,sans-serif;
+	padding-left: 500px;
+	color: green;
+	
+}
+.no{
+	font: 30px arial,sans-serif;
+	padding-left: 500px;
+	color: red;
+}
 p{
-	font: 50px arial,sans-serif;
+	font: 30px arial,sans-serif;
 	color: pink;
 	
 }
@@ -81,7 +109,8 @@ p{
 	padding-left: 20px;'
 	padding-right: 15px;
 	
-}
-body{
 	
+}
+.picture{
+	border: 3px solid pink;
 }
