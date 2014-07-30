@@ -204,6 +204,7 @@
         if (!('data-ward' in evilNakov)) {
             evilNakov.setAttribute('data-ward', '-2');
         }
+        setInterval(function () { isHeroColliding(); }, 150);
 
         setInterval(function() { evilStartMoving(); }, 200);
     </script>
