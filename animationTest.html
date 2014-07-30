@@ -129,16 +129,10 @@
         }
     </style>
     <script defer>
-        $(document).ready(function() {
-            $('#start').on("click", function() {
-                $('#cover').hide();
-                $("#hero").hide().slideDown('500').css('visibility','visible');
-                for (var i = 0; i < 5; i++) {
-                    $('hero').fadeOut(250).fadeIn(250);
-                }
-
-            });
-        });
+        function hideCover() {
+            var cover = document.getElementById('cover');
+            cover.style.display = 'none';
+        }
     </script>
 </head>
 <body>
@@ -172,7 +166,7 @@
     <div class="block" id="43"></div>
     <div class="block" id="44"></div>
     <div id="cover">
-        <div id="start" onclick="start();"> START </div>
+        <div id="start" onclick="hideCover();"> START </div>
     </div>
 </div>
 <script type="text/javascript">
@@ -180,7 +174,6 @@
 	    hero.style.top = 0;
 	    hero.style.left = 0;
 	    var playGround = document.getElementById('playground');
-	    document.getElementById('cover').style.display = 'none';
 	    var blocks = document.getElementsByClassName('block');
 
         // experimentally
