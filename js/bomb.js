@@ -62,11 +62,10 @@ function killHeroes(x, y) {
             || ((x + 135) < hX && (x + 135) < (hX + 40))
             )
         ) {
-        // check vertically
         if (
             !(
-                ((y >= hY) && y >= (hY + 40))
-                || (y + 45 <= hY && (y + 45) <= (hY + 40))
+                ((y > hY + 3) && y > (hY + 43))
+                || (y + 42 < hY && (y + 42) < (hY + 40))
                 )
             )   {
                  isHeroKilled = true;
@@ -79,11 +78,10 @@ function killHeroes(x, y) {
             || ((y + 135) < hY && (y + 135) < (hY + 40))
             )
         ) {
-        // check vertically
         if (
             !(
-                ((x > hX) && x > (hX + 40))
-                || (x + 45 < hX && (x + 45) < (hX + 40))
+                ((x > hX + 3) && x > (hX + 43))
+                || (x + 42 < hX && (x + 42) < (hX + 40))
                 )
             ) {
             isHeroKilled = true;
