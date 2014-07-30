@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Animation Test</title>
     <script src="js/jquery-1.11.1.min.js"></script>
+
     <script src="js/playground.js" defer></script>
     <script src="js/hero.js" defer></script>
     <script src="js/bomb.js" defer></script>
@@ -174,29 +175,11 @@
         <div id="start" onclick="hideCover();"> START </div>
     </div>
 </div>
+    <script src="js/init.js"></script>
 <script type="text/javascript">
+
 	   function startGame() {
-           var hero = document.getElementById('hero');
-           hero.style.top = 0;
-           hero.style.left = 0;
-           var playGround = document.getElementById('playground');
-           var blocks = document.getElementsByClassName('block');
-
-           // experimentally
-           var testBomb = document.getElementById('test-bomb');
-           testBomb.style.top = '180px';//'90px';
-           testBomb.style.left = '90px';//'135px';
-
-           var HERO_SPEED = 15;
-           var EVIL_SPEED = 15;
-
-           // experimentally
-           var evilNakov = document.getElementById('nakov');
-           evilNakov.style.top = '0px';
-           evilNakov.style.left = '450px';
-           if (!('data-ward' in evilNakov)) {
-               evilNakov.setAttribute('data-ward', '-2');
-           }
+           
            setInterval(function () { isHeroColliding(); }, 150);
 
            setInterval(function() { evilStartMoving(); }, 200);
