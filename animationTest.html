@@ -138,14 +138,13 @@
         function hideCover() {
             var cover = document.getElementById('cover');
             cover.style.display = 'none';
+            startGame();
         }
     </script>
 </head>
 <body>
 <div id="playground">
     <div id="hero"><img src="img/hero_39.gif" alt="hero" /></div>
-    <div class="bomb" id="test-bomb"></div><!-- experimentally -->
-    <div class="evil" id="nakov"></div><!-- experimentally -->
     <div class="block" id="00"></div>
     <div class="block" id="01"></div>
     <div class="block" id="02"></div>
@@ -176,30 +175,32 @@
     </div>
 </div>
 <script type="text/javascript">
-	    var hero = document.getElementById('hero');
-	    hero.style.top = 0;
-	    hero.style.left = 0;
-	    var playGround = document.getElementById('playground');
-	    var blocks = document.getElementsByClassName('block');
+	   function startGame() {
+           var hero = document.getElementById('hero');
+           hero.style.top = 0;
+           hero.style.left = 0;
+           var playGround = document.getElementById('playground');
+           var blocks = document.getElementsByClassName('block');
 
-        // experimentally
-        var testBomb = document.getElementById('test-bomb');
-        testBomb.style.top = '180px';//'90px';
-        testBomb.style.left = '90px';//'135px';
+           // experimentally
+           var testBomb = document.getElementById('test-bomb');
+           testBomb.style.top = '180px';//'90px';
+           testBomb.style.left = '90px';//'135px';
 
-	    var HERO_SPEED = 15;
-        var EVIL_SPEED = 15;
+           var HERO_SPEED = 15;
+           var EVIL_SPEED = 15;
 
-        // experimentally
-        var evilNakov = document.getElementById('nakov');
-        evilNakov.style.top = '0px';
-        evilNakov.style.left = '450px';
-        if (!('data-ward' in evilNakov)) {
-            evilNakov.setAttribute('data-ward', '-2');
-        }
-        setInterval(function () { isHeroColliding(); }, 150);
+           // experimentally
+           var evilNakov = document.getElementById('nakov');
+           evilNakov.style.top = '0px';
+           evilNakov.style.left = '450px';
+           if (!('data-ward' in evilNakov)) {
+               evilNakov.setAttribute('data-ward', '-2');
+           }
+           setInterval(function () { isHeroColliding(); }, 150);
 
-        setInterval(function() { evilStartMoving(); }, 200);
+           setInterval(function() { evilStartMoving(); }, 200);
+       }
     </script>
 </body>
 </html>
