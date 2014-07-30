@@ -92,5 +92,6 @@ function killHeroes(x, y) {
 
     if (isHeroKilled) {
         alert("Hero is killed.");
+        setTimeout(function() { location.reload(); }, 1500);
     }
 }
