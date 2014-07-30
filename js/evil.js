@@ -5,8 +5,8 @@ function locateEvil(x, y, imgSrc, id) {
     // CREATE evil hero:
     var evil = document.createElement('div');
     evil.setAttribute('id',id);
-
-     evil.setAttribute('data-ward', '-2');
+    // set ward to the evil:
+    evil.setAttribute('data-ward', '-2');
     // style the evil:
     evil.className = 'evil';
     // set img in evil div:
