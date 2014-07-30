@@ -97,5 +97,41 @@ function isMoveable(tb, rl) {
 		return false;*/return false;
 	}
 
+
 	return (horizontal || vertical) && !isOverBomb();
+}
+function isHeroColliding() {
+    var hero = document.getElementById('hero');
+
+    var x = hero.style.left;
+    x = x.substring(0, x.indexOf('p'));
+    x = parseInt(x);
+
+    var y = hero.style.top;
+    y = y.substring(0, y.indexOf('p'));
+    y = parseInt(y);
+
+    idsToCheck = ['nakov','georgiev','alexandra','petq','kurtev', 'karamfilov'];
+    for (i in idsToCheck) {
+        if (document.getElementById(idsToCheck[i])) {
+            var badGuy = document.getElementById(idsToCheck[i]);
+            var x1= badGuy.style.left;
+            x1 = x1.substring(0, x1.indexOf('p'));
+            x1 = parseInt(x1);
+
+            var y1= badGuy.style.top;
+            y1 = y1.substring(0, y1.indexOf('p'));
+            y1 = parseInt(y1);
+
+            if (
+                ((x + 45) > x1 && ((x + 45) < x1 + 45) && ((y == y1)||(y > y1 && y+45 < y1) || (y < y1 && y > y1+45))) ||
+                (x < x1+45 && (x > x1) && ((y == y1)||(y > y1 && y+45 < y1) || (y < y1 && y > y1+45))) ||
+                (x == x1) && ((y == y1)||(y > y1 && y+45 < y1) || (y < y1 && y > y1+45))
+                ) {
+                console.log('hero is killed')
+                hero.remove();
+                setTimeout(function() { location.reload(); }, 1500);
+            }
+        }
+    }
 }
