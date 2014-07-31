@@ -1,0 +1,116 @@
+html{
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 20px;
+	background: url(../planet31.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+a:link    {
+	color:blue;
+	text-decoration: none;
+	color: pink;
+}
+a:visited {
+	color:black;
+	color: pink;
+}
+a:hover   {
+	color:red;
+	color: pink;
+}
+a:active  {
+	color:yellow;
+	color: pink;
+}
+
+
+#game{
+	 position:absolute;
+     width:500px;
+     height:500px;
+     background:transparent;
+	 color: pink;
+	 position: absolute;
+     top:0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     border: none;
+     margin: 100px auto;
+	 
+}
+div.transparent{
+  height: 500px;
+  margin: 30px 50px;
+  background-color: black;
+  border: 3px solid pink;
+  opacity:0.6;
+  filter:alpha(opacity=60); 
+}
+ul{
+	list-style-type: none;
+	overflow: hidden;
+
+}
+h1{
+	font: 30px arial,sans-serif;
+	color: pink;
+	
+}
+.created{
+	font: 30px arial,sans-serif;
+	color: #00FF00;
+	
+
+}
+
+.others{
+	font: 30px arial,sans-serif;
+	color: red;
+}
+
+.ok{
+	font: 30px arial,sans-serif;
+	padding-left: 500px;
+	color: green;
+	
+}
+.no{
+	font: 30px arial,sans-serif;
+	padding-left: 500px;
+	color: red;
+}
+p{
+	font: 30px arial,sans-serif;
+	color: pink;
+	
+}
+.justtextnav{
+	background-color: black;
+	opacity:0.6;
+	filter:alpha(opacity=60); 
+	font: 20px arial,sans-serif;
+	float:left;
+	color: pink;
+	padding-bottom: 10px;
+	border-right: 1px solid pink;
+	background-size: cover;
+	text-shadow: -2px 1px white;
+	padding-left: 20px;'
+	
+
+}
+.logo{	
+	float:left;
+	padding-bottom: 10px;
+	padding-left: 20px;'
+	padding-right: 15px;
+	
+	
+}
+.picture{
+	border: 3px solid pink;
+}

@@ -2,150 +2,26 @@
 <html>
 	<head>
 		<title>Home Page</title>
-		<script type = "text/JavaScript" src=""></script>
-		<link rel="stylesheet" type="text/css" href="page.css">
-		 <script src="js/playground.js" defer></script>
-    <script src="js/hero.js" defer></script>
-    <script src="js/bomb.js" defer></script>
-    <script src="js/evilMovement.js" defer></script>
-    <script src="js/evil.js" defer></script>
-    <style>
-        body, html {
-            padding: 0;
-            width: 100%;
-            margin: 0;
-            height: 90%;
-        }
-        #playground {
-            background: whitesmoke;
-            width: 495px;
-            height: 495px;
-            margin: 0px auto;
-            position: relative;
-            border-radius: 15px;
-            box-shadow: 0 0 30px 2px lightblue;
-            overflow: hidden;
-        }
-        #hero {
-            box-sizing: border-box;
-            position: absolute;
-            background: skyblue;
-            border-radius: 15px;
-            top:0;
-            left:0;
-            width: 39px;
-            height: 39px;
-            margin: 3px;
-            box-shadow: 0 0 5px 3px lightgray;
-            z-index: 2;
-            -webkit-transition: all .1s linear;
-            transition: all .1s linear;
-            /* visibility: hidden; */
-        }
-        #playground > .bomb {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            margin: 4px;
-            color: gainsboro;
-            line-height: 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            vertical-align: middle;
-            text-align: center;
-            background: black;
-            border-radius: 20px;
-            border: 5px solid black;
-            box-shadow: 0 0 4px 1px black ;
-            -webkit-transition:  0.6s; /* For Safari 3.1 to 6.0 */
-            transition:  0.6s;
-            z-index: 0;
-        }
-        .bomb > img {
-            opacity: .5;
-            position: relative;
-            left: -2px;
-            top: 2px;
-        }
-        #playground > .evil {
-            position: absolute;
-            box-sizing: border-box;
-            background: firebrick;
-            border-radius: 15px;
-            width: 39px;
-            height: 39px;
-            margin: 3px;
-            box-shadow: 0 0 5px 3px darkgray;
-            text-align: center;
-            line-height: 45px;
-            vertical-align: middle;
-            z-index: 2;
-            -webkit-transition: all .2s linear;
-            transition: all .2s linear;
-        }
-        #playground > .evil > img {
-            width: 40px;
-            height: 40px;
-        }
-        .block {
-        	position: absolute;
-        	width: 45px;
-        	height: 45px;
-        	background-image: url('img/block.png');
-        	border-radius: 4px;
-            z-index: 1;
-        }
-        #cover {
-            position: absolute;
-            z-index: 5;
-            top:0;
-            left: 0;
-            width: 495px;
-            height: 495px;
-            border-radius: 15px;
-            background: rgba(0,0,0,0.2);
-        }
-        #cover > #start {
-            font-family: sans-serif, Verdana, Tahoma;
-            display: table-cell;
-            position: absolute;
-            width: 150px;
-            height: 50px;
-            left:37%;
-            top: 44%;
-            background: yellowgreen;
-            border-radius: 30px;
-            text-align: center;
-            color: whitesmoke;
-            font-size: 2.1em;
-            cursor: pointer;
-            line-height: 50px;
-            vertical-align: middle;
-            box-shadow: 0 0 10px 2px gray;
-            -webkit-transition: box-shadow 0.5s;
-            transition: box-shadow 0.5s;
-        }
-        #cover > #start:hover {
-            box-shadow: 0 0 50px 2px gray;
-            color: lightcyan;
-        }
-        #cover > #start:active {
-            background: darkgray;
-        }
-    </style>
-    <script defer>
-        function hideCover() {
-            var cover = document.getElementById('cover');
-            cover.style.display = 'none';
-            startGame();
-        }
-    </script>
+		<link rel="stylesheet" type="text/css" href="css/page.css">
+        <link rel="stylesheet" type="text/css" href="css/game.css">
+        <script src="js/playground.js" defer></script>
+        <script src="js/hero.js" defer></script>
+        <script src="js/bomb.js" defer></script>
+        <script src="js/evilMovement.js" defer></script>
+        <script src="js/evil.js" defer></script>
+        <script defer>
+            function hideCover() {
+                var cover = document.getElementById('cover');
+                cover.style.display = 'none';
+                startGame();
+            }
+        </script>
 	</head>
 	<body>
 		<header>
 			<nav>
 				<ul>
-					<li class="logo"><img src="logo.jpg" class="picture" width="162px"></a></</li>
+					<li class="logo"><img src="logo.jpg" class="picture" width="162px"></li>
 					<li class="justtextnav"><a href="home.html">Home</a></li>
 					<li class="justtextnav"><a href="about.html">About</a></li>
 					<li class="justtextnav"><a href="news.html">News</a></li>
@@ -157,57 +33,74 @@
 		<section>
 			<div id="game">
 			<div id="playground">
-    <div id="hero"><img src="img/hero_39.gif" alt="hero" /></div>
-    <div class="block" id="00"></div>
-    <div class="block" id="01"></div>
-    <div class="block" id="02"></div>
-    <div class="block" id="03"></div>
-    <div class="block" id="04"></div>
-    <div class="block" id="10"></div>
-    <div class="block" id="11"></div>
-    <div class="block" id="12"></div>
-    <div class="block" id="13"></div>
-    <div class="block" id="14"></div>
-    <div class="block" id="20"></div>
-    <div class="block" id="21"></div>
-    <div class="block" id="22"></div>
-    <div class="block" id="23"></div>
-    <div class="block" id="24"></div>
-    <div class="block" id="30"></div>
-    <div class="block" id="31"></div>
-    <div class="block" id="32"></div>
-    <div class="block" id="33"></div>
-    <div class="block" id="34"></div>
-    <div class="block" id="40"></div>
-    <div class="block" id="41"></div>
-    <div class="block" id="42"></div>
-    <div class="block" id="43"></div>
-    <div class="block" id="44"></div>
-    <div id="cover">
-        <div id="start" onclick="hideCover();"> START </div>
-    </div>
-</div>
-			<div>
-		</section>
-		<article>
-		</article>
-		<footer>
-		</footer>
-		<script src="js/init.js"></script>
-<script type="text/javascript">
+                <div id="hero"></div>
+                <div class="block" id="00"></div>
+                <div class="block" id="01"></div>
+                <div class="block" id="02"></div>
+                <div class="block" id="03"></div>
+                <div class="block" id="04"></div>
+                <div class="block" id="10"></div>
+                <div class="block" id="11"></div>
+                <div class="block" id="12"></div>
+                <div class="block" id="13"></div>
+                <div class="block" id="14"></div>
+                <div class="block" id="20"></div>
+                <div class="block" id="21"></div>
+                <div class="block" id="22"></div>
+                <div class="block" id="23"></div>
+                <div class="block" id="24"></div>
+                <div class="block" id="30"></div>
+                <div class="block" id="31"></div>
+                <div class="block" id="32"></div>
+                <div class="block" id="33"></div>
+                <div class="block" id="34"></div>
+                <div class="block" id="40"></div>
+                <div class="block" id="41"></div>
+                <div class="block" id="42"></div>
+                <div class="block" id="43"></div>
+                <div class="block" id="44"></div>
+                <div id="cover">
+                    <div id="start" onclick="hideCover();"> START </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <footer>
+            <script src="js/init.js"></script>
+            <script type="text/javascript">
 
-	   function startGame() {
-           locateEvil(450,450,'img/nakov-boss_45.png', 'nakov');
-           locateEvil(405,450,'img/alexandrova_45.png', 'alexandra');
-           locateEvil(450,180,'img/georgiev_45.png', 'georgiev');
-           locateEvil(360,180,'img/kurtev_45.png', 'kurtev');
-           locateEvil(360,360,'img/grozdarska_45.png', 'petq');
-           locateEvil(360,270,'img/karamfilov_45.png', 'karamfilov');
-           
-           setInterval(function () { isHeroColliding(); }, 150);
+                function startGame() {
+                    document.getElementById('hero').style.visibility = 'visible'
+                    var startCoords = [];
+                    var x;
+                    var y;
+                    var ward;
+                    for (var i = 0; i < 6; i++) {
+                        if (Math.random() < .5) { //chance 1 : 2
+                            x = Math.floor(Math.random() * 11) * 45;
+                            y = 450;
+                            ward = -2;
+                        }
+                        else {
+                            x = 450;
+                            y = Math.floor(Math.random() * 11) * 45;
+                            ward = 1;
+                        }
+                        startCoords.push({ 'x': x, 'y': y, 'ward': ward});
+                    }
+                    locateEvil(startCoords[0].x, startCoords[0].y, 'img/nakov-boss_45.png', 'nakov', startCoords[0].ward);
+                    locateEvil(startCoords[1].x, startCoords[1].y, 'img/alexandrova_45.png', 'alexandra', startCoords[1].ward);
+                    locateEvil(startCoords[2].x, startCoords[2].y, 'img/georgiev_45.png', 'georgiev', startCoords[2].ward);
+                    locateEvil(startCoords[3].x, startCoords[3].y, 'img/kurtev_45.png', 'kurtev', startCoords[3].ward);
+                    locateEvil(startCoords[4].x, startCoords[4].y, 'img/grozdarska_45.png', 'petq', startCoords[4].ward);
+                    locateEvil(startCoords[5].x, startCoords[5].y, 'img/karamfilov_45.png', 'karamfilov', startCoords[5].ward);
 
-           setInterval(function() { evilStartMoving(); }, 200);
-       }
-    </script>
+
+                    setInterval(function () { isHeroColliding(); }, 150);
+
+                    setInterval(function() { evilStartMoving(); }, 200);
+                }
+            </script>
+        </footer>
 	</body>
 </html>

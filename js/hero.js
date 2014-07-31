@@ -12,6 +12,7 @@ window.onkeydown = function(e) {
 			if (coord < 0) {
 				coord = 0;
 			}
+
 			if (isMoveable(null, coord)) {
 				hero.style.left = coord + 'px';
 			}
@@ -22,6 +23,7 @@ window.onkeydown = function(e) {
 			if (coord < 0) {
 				coord = 0;
 			}
+
 			if (isMoveable(coord, null)) {
 				hero.style.top = coord + 'px';
 			}
@@ -29,8 +31,8 @@ window.onkeydown = function(e) {
 		case 39: // →
 			coord = parseInt(hero.style.left);
 			coord += HERO_SPEED;
-			if (coord > playGround.clientWidth - hero.clientWidth) {
-				coord = playGround.clientWidth - hero.clientWidth;
+			if (coord > 450) {
+				coord = 450;
 			}
 			if (isMoveable(null, coord)) {
 				hero.style.left = coord + 'px';
@@ -39,9 +41,10 @@ window.onkeydown = function(e) {
 		case 40: // ↓
 			coord = parseInt(hero.style.top);
 			coord += HERO_SPEED;
-			if (coord > playGround.clientHeight - hero.clientHeight) {
-				coord = playGround.clientHeight - hero.clientHeight;
+			if (coord > 450) {
+				coord = 450;
 			}
+
 			if (isMoveable(coord, null)) {
 				hero.style.top = coord + 'px';
 			}
@@ -126,7 +129,9 @@ function isHeroColliding() {
             if (
                 ((x + 45) > x1 && ((x + 45) < x1 + 45) && ((y == y1)||(y > y1 && y+45 < y1) || (y < y1 && y > y1+45))) ||
                 (x < x1+45 && (x > x1) && ((y == y1)||(y > y1 && y+45 < y1) || (y < y1 && y > y1+45))) ||
-                (x == x1) && ((y == y1)||(y > y1 && y+45 < y1) || (y < y1 && y > y1+45))
+                    
+                ((y + 45) > y1 && ((y + 45) < y1 + 45) && ((x == x1)||(x > x1 && x+45 < x1) || (x < x1 && x > x1+45))) ||
+                (y < y1+45 && (y > y1) && ((x == x1)||(x > x1 && x+45 < x1) || (x < x1 && x > x1+45))) 
                 ) {
                 console.log('hero is killed')
                 hero.remove();

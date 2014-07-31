@@ -1,0 +1,145 @@
+body, html {
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    height: 90%;
+}
+
+#playground {
+    background: whitesmoke;
+    width: 495px;
+    height: 495px;
+    margin: 0px auto;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 0 0 30px 10px lightslategray;
+    border: 5px solid lightslategray;
+    overflow: hidden;
+}
+#playground > .block {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-image: url("../img/wall-bricks-3.jpg");
+    background-size: 100%;
+    box-shadow: 0 0 15px 1px darkgray;
+    border-radius: 6px;
+    z-index: 1;
+}
+#playground > .block:nth-child(2n) {
+    background-image: url("../img/wall-bricks-1.jpg");
+    background-size: 100%;
+}
+#playground > .block:nth-child(3n) {
+    background-image: url("../img/wall-bricks-2.jpg");
+    background-size: 100%;
+}
+#playground > .block:nth-child(5n) {
+    background-image: url("../img/wall-bricks-4.jpg");
+    background-size: 100%;
+}
+#playground > #hero {
+    position: absolute;
+    background-color: yellowgreen;
+    background-image: url("../img/hero.gif");
+    background-size: 100%;
+    border-radius: 15px;
+    top:0;
+    left:0;
+    width: 39px;
+    height: 39px;
+    margin: 3px;
+    box-shadow: 0 0 20px 1px lightskyblue;
+    z-index: 2;
+    -webkit-transition: all .1s linear;
+    transition: all .1s linear;
+    visibility: hidden;
+}
+#playground > .evil {
+    position: absolute;
+    box-sizing: border-box;
+    background-color: firebrick;
+    border-radius: 15px;
+    width: 39px;
+    height: 39px;
+    margin: 3px;
+    box-shadow: 0 0 10px 1px darkgray;
+    text-align: center;
+    line-height: 45px;
+    vertical-align: middle;
+    z-index: 2;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+    background-size: 100%;
+}
+#playground > .bomb {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+    color: gainsboro;
+    line-height: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
+    background: black;
+    border-radius: 20px;
+    border: 3px solid darkorange;
+    box-shadow: 0 0 7px 2px gray;
+    -webkit-transition:  0.6s; /* For Safari 3.1 to 6.0 */
+    transition:  0.6s;
+    z-index: 0;
+}
+#playground > .bomb > img {
+    opacity: 0.5;
+    position: absolute;
+    top: 2px;
+    left: 1px;
+}
+
+#playground > .evil > img {
+    width: 40px;
+    height: 40px;
+}
+
+#cover {
+    position: absolute;
+    z-index: 5;
+    top:0;
+    left: 0;
+    width: 495px;
+    height: 495px;
+    border-radius: 15px;
+    background: rgba(169, 169, 169, 0.7);
+
+}
+#cover > #start {
+    font-family: sans-serif, Verdana, Tahoma;
+    display: table-cell;
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    left:37%;
+    top: 44%;
+    background: yellowgreen;
+    border-radius: 15px;
+    border: 4px solid yellowgreen;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 2.1em;
+    cursor: pointer;
+    line-height: 42px;
+    vertical-align: middle;
+    box-shadow: 0 0 10px 2px gray;
+    -webkit-transition: box-shadow 0.5s;
+    transition: box-shadow 0.5s;
+}
+#cover > #start:hover {
+    box-shadow: 0 0 50px 2px gray;
+    border: 4px solid white;
+    color: lightcyan;
+}
+#cover > #start:active {
+    background: darkgray;
+}

@@ -43,61 +43,64 @@ function locateBomb(x, y) {
 function killHeroes(x, y) {
     var heroesToKill = ['hero','nakov','georgiev','alexandra','petq','kurtev', 'karamfilov'];
     for (i in heroesToKill) {
-        var id = heroesToKill[i];
-        var heroToKill = document.getElementById(id);
-        var isHeroKilled = false;
 
-        // get hero location:
-        var hX = heroToKill.style.left;
-        var hY = heroToKill.style.top;
-        // remove 'px' ant parse to int
-        hX = hX.substring(0, hX.indexOf('p'));
-        hX = parseInt(hX)
-        hY = hY.substring(0, hY.indexOf('p'));
-        hY = parseInt(hY);
-        console.log('bomb: '+ x + ', ' + y);
-        console.log('hero: '+ hX + ', ' + hY);
-        //// check if hero is in the flame:
-        // check horizontal:
-        if (
-            !(
-                ((x - 90 > hX) && (x - 90) > (hX + 40))
-                || ((x + 135) < hX && (x + 135) < (hX + 40))
-                )
-            ) {
+        var id = heroesToKill[i];
+
+        if (document.getElementById(id)) {
+            var isHeroKilled = false;
+            var heroToKill = document.getElementById(id);
+            // get hero location:
+            var hX = heroToKill.style.left;
+            var hY = heroToKill.style.top;
+            // remove 'px' ant parse to int
+            hX = hX.substring(0, hX.indexOf('p'));
+            hX = parseInt(hX)
+            hY = hY.substring(0, hY.indexOf('p'));
+            hY = parseInt(hY);
+            console.log('bomb: '+ x + ', ' + y);
+            console.log('hero: '+ hX + ', ' + hY);
+            //// check if hero is in the flame:
+            // check horizontal:
             if (
                 !(
-                    ((y > hY + 3) && y > (hY + 43))
-                    || (y + 42 < hY && (y + 42) < (hY + 40))
-                    )
-                )   {
-                isHeroKilled = true;
-            }
-        }
-        // check vertical:
-        if (
-            !(
-                ((y - 90 > hY) && (y - 90) > (hY + 40))
-                || ((y + 135) < hY && (y + 135) < (hY + 40))
-                )
-            ) {
-            if (
-                !(
-                    ((x > hX + 3) && x > (hX + 43))
-                    || (x + 42 < hX && (x + 42) < (hX + 40))
+                    ((x - 90 > hX) && (x - 90) > (hX + 40))
+                    || ((x + 135) < hX && (x + 135) < (hX + 40))
                     )
                 ) {
-                isHeroKilled = true;
+                if (
+                    !(
+                        ((y > hY + 3) && y > (hY + 43))
+                        || (y + 42 < hY && (y + 42) < (hY + 40))
+                        )
+                    )   {
+                    isHeroKilled = true;
+                }
+            }
+            // check vertical:
+            if (
+                !(
+                    ((y - 90 > hY) && (y - 90) > (hY + 40))
+                    || ((y + 135) < hY && (y + 135) < (hY + 40))
+                    )
+                ) {
+                if (
+                    !(
+                        ((x > hX + 3) && x > (hX + 43))
+                        || (x + 42 < hX && (x + 42) < (hX + 40))
+                        )
+                    ) {
+                    isHeroKilled = true;
+                }
+            }
+
+            if (isHeroKilled) {
+                heroToKill.remove();
+                if (id == 'hero') {
+                    setTimeout(function() { location.reload(); }, 1500);
+                }
             }
         }
 
-        if (isHeroKilled) {
-            console.log(id + " is killed.");
-            heroToKill.remove();
-            if (id == 'hero') {
-                setTimeout(function() { location.reload(); }, 1500);
-            }
-        }
     }
 
 }
